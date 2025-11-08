@@ -1,0 +1,8 @@
+const util = require('util')
+const fs = require('fs')
+const readFile = util.promisify(fs.readFile)
+readFile('stream_input.txt', 'utf8').then(data => console.log('util readFile:', data)).catch(err => console.error(err))
+const path = require('path')
+const os = require('os')
+console.log('basename', path.basename(__filename))
+console.log('homedir', os.homedir())

@@ -1,0 +1,7 @@
+const fs = require('fs')
+const ws = fs.createWriteStream('stream_output.txt')
+ws.write('First line\n')
+ws.write('Second line\n')
+ws.end()
+ws.on('finish', () => console.log('write finished'))
+ws.on('error', err => console.error(err))

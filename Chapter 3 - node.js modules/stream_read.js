@@ -1,0 +1,5 @@
+const fs = require('fs')
+const rs = fs.createReadStream('stream_input.txt', { highWaterMark: 16 })
+rs.on('data', chunk => console.log('chunk:', chunk.toString()))
+rs.on('end', () => console.log('read end'))
+rs.on('error', err => console.error(err))

@@ -1,0 +1,6 @@
+console.log('start')
+setTimeout(()=>console.log('timeout 0'),0)
+setImmediate(()=>console.log('setImmediate'))
+process.nextTick(()=>console.log('nextTick'))
+Promise.resolve().then(()=>console.log('promise resolved'))
+console.log('end')

@@ -1,0 +1,7 @@
+const EventEmitter = require('events')
+const emitter = new EventEmitter()
+emitter.on('greet', name => console.log(`Hello ${name}`))
+emitter.on('greet', name => console.log(`How are you, ${name}?`))
+emitter.once('greet', () => console.log('This runs once'))
+emitter.emit('greet', 'Alice')
+emitter.emit('greet', 'Bob')

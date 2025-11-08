@@ -1,0 +1,6 @@
+const buf = Buffer.from('Hello Node.js Buffer')
+console.log(buf)
+console.log(buf.toString())
+const buf2 = Buffer.alloc(5)
+buf.copy(buf2, 0, 0, 5)
+console.log(buf2.toString())

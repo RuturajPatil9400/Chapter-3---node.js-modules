@@ -1,0 +1,7 @@
+const fs = require('fs')
+const rs = fs.createReadStream('stream_input.txt')
+const ws = fs.createWriteStream('stream_output_pipe.txt')
+rs.pipe(ws)
+ws.on('finish', () => console.log('pipe finished'))
+ws.on('error', err => console.error(err))
+rs.on('error', err => console.error(err))
